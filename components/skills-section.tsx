@@ -406,7 +406,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { motion } from "framer-motion" // ✅ added for animation
+import { motion } from "framer-motion"
 
 interface Skill {
   name: string
@@ -531,11 +531,10 @@ export function SkillsSection() {
                 <button
                   key={category.name}
                   onClick={() => handleCategoryChange(index)}
-                  className={`flex-shrink-0 lg:w-full text-left p-3 sm:p-4 rounded-lg transition-all duration-300 ${
-                    activeCategory === index
+                  className={`flex-shrink-0 lg:w-full text-left p-3 sm:p-4 rounded-lg transition-all duration-300 ${activeCategory === index
                       ? "bg-primary text-primary-foreground shadow-lg"
                       : "bg-card hover:bg-muted text-card-foreground"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center space-x-2 sm:space-x-3 whitespace-nowrap lg:whitespace-normal">
                     <span className="text-xl sm:text-2xl">{category.icon}</span>
@@ -559,9 +558,8 @@ export function SkillsSection() {
                 {skillCategories[activeCategory].skills.map((skill, index) => (
                   <div
                     key={skill.name}
-                    className={`transition-all duration-500 ${
-                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                    }`}
+                    className={`transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                      }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex justify-between items-center mb-2">
@@ -607,14 +605,14 @@ export function SkillsSection() {
           </div>
         </div> */}
         {/* Quick Skills Overview */}
-<div className="mt-12 sm:mt-16 text-center">
-  <h3 className="font-serif font-semibold text-xl sm:text-2xl mb-4">
-    Core Technologies I Work With
-  </h3>
-  <p className="text-base sm:text-lg text-muted-foreground">
-    ⚡ React • Next.js • Node.js • MongoDB • Express.js • Tailwind CSS • Git/GitHub
-  </p>
-</div>
+        <div className="mt-12 sm:mt-16 text-center">
+          <h3 className="font-serif font-semibold text-xl sm:text-2xl mb-4">
+            Core Technologies I Work With
+          </h3>
+          <p className="text-base sm:text-lg text-muted-foreground">
+            ⚡ React • Next.js • Node.js • MongoDB • Express.js • Tailwind CSS • Git/GitHub
+          </p>
+        </div>
 
       </div>
     </section>

@@ -68,7 +68,7 @@ const projects: Project[] = [
     title: "Todo App",
     description: "Modern blogging platform with CMS",
     longDescription:
-    "A full-stack Todo app with a Next.js frontend (TypeScript, Tailwind CSS) and a FastAPI backend (SQLModel, Supabase). Supports CRUD operations and is optimized for both desktop and mobile.",  
+      "A full-stack Todo app with a Next.js frontend (TypeScript, Tailwind CSS) and a FastAPI backend (SQLModel, Supabase). Supports CRUD operations and is optimized for both desktop and mobile.",
     image: "/blogsite.png",
     technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
     githubUrl: "https://github.com/iaffansheikh21/TodoApp-FastAPI-",

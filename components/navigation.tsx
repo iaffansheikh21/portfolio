@@ -141,9 +141,8 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -151,7 +150,7 @@ export function Navigation() {
             onClick={() => handleNavClick("#home")}
             className="font-serif font-bold text-xl text-foreground hover:text-primary transition-colors duration-200"
           >
-          Muhammad Affan Sheikh
+            Muhammad Affan Sheikh
           </button>
 
           {/* Desktop Navigation */}
@@ -164,9 +163,8 @@ export function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className={`relative font-medium transition-colors duration-200 ${
-                    isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
-                  }`}
+                  className={`relative font-medium transition-colors duration-200 ${isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                    }`}
                 >
                   {item.label}
                   {isActive && <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />}
@@ -197,11 +195,10 @@ export function Navigation() {
                   <button
                     key={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className={`block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${
-                      isActive
+                    className={`block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${isActive
                         ? "text-primary bg-primary/10"
                         : "text-muted-foreground hover:text-primary hover:bg-muted"
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </button>
