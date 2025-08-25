@@ -108,7 +108,7 @@ export function SkillsSection() {
   }
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="skills" ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
