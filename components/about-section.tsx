@@ -283,18 +283,6 @@ export function AboutSection() {
       description: "Building scalable server-side applications and APIs with Node.js, Python, and cloud services.",
       skills: ["Node.js", "Python", "PostgreSQL", "MongoDB"],
     },
-    {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description: "Developing cross-platform mobile applications with React Native and progressive web apps.",
-      skills: ["React Native", "PWA", "Mobile UI/UX"],
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Designing intuitive user experiences with modern design principles and accessibility in mind.",
-      skills: ["Design Systems", "User Research", "Accessibility"],
-    },
   ]
 
   const containerVariants = {
@@ -349,9 +337,7 @@ export function AboutSection() {
               </motion.h2>
               <div className="space-y-3 sm:space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
                 {[
-                  "I'm a passionate full-stack developer with over 3 years of experience creating digital solutions that make a difference. My journey in web development started with curiosity and has evolved into a deep expertise in modern technologies.",
-                  "I specialize in building scalable web applications using React, Next.js, and Node.js, with a strong focus on user experience and performance optimization. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.",
-                  "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
+                  "I’m Muhammad Affan Sheikh, a passionate Full-Stack Web Developer skilled in React, Next.js, Node.js, and MongoDB, with additional experience in TypeScript, MySQL, and PostgreSQL. I recently completed my BS in Software Engineering and gained real-world experience during my internship at FISTA Solutions, where I worked on scalable web applications and optimized UI performance. I love the problem-solving aspect of programming and enjoy building clean, maintainable, and user-friendly applications. Always eager to learn and grow, I stay up-to-date with modern technologies and am currently seeking a full-time role as a Software Engineer.",
                 ].map((paragraph, index) => (
                   <motion.p
                     key={index}

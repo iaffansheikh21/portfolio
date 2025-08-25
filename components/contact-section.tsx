@@ -296,7 +296,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, CheckCircle } from "lucide-react"
 
 interface ContactForm {
   name: string
@@ -343,20 +343,19 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "affan.sheikh@example.com",
-      href: "mailto:affan.sheikh@example.com",
+      value: "muhammadaffansheikh21@gmail.com",
+      href: "mailto:muhammadaffansheikh21@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+92 300 1234567",
-      href: "tel:+923001234567",
+      value: "+92 310 1048485",
+      href: "tel:+923101048485",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Karachi, Pakistan",
-      href: "#",
+      value: "Faisalabad, Pakistan",
     },
   ]
 
@@ -370,13 +369,13 @@ export function ContactSection() {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/affansheikh",
+      href: "https://www.linkedin.com/in/iaffansheikh21/",
       color: "hover:text-blue-600",
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/affansheikh",
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://instagram.com/iaffansheikh21",
       color: "hover:text-blue-400",
     },
   ]
