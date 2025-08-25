@@ -25,9 +25,24 @@ export function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [emailError, setEmailError] = useState("") // ✅ added for validation
+
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return regex.test(email)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    // ✅ Email validation before submission
+    if (!validateEmail(form.email)) {
+      setEmailError("Please enter a valid email address")
+      return
+    } else {
+      setEmailError("")
+    }
+
     setIsSubmitting(true)
 
     // Simulate form submission
@@ -48,6 +63,15 @@ export function ContactSection() {
       ...prev,
       [e.target.name]: e.target.value,
     }))
+
+    // ✅ live email validation
+    if (e.target.name === "email") {
+      if (!validateEmail(e.target.value)) {
+        setEmailError("Invalid email format")
+      } else {
+        setEmailError("")
+      }
+    }
   }
 
   const contactInfo = [
@@ -60,14 +84,13 @@ export function ContactSection() {
     {
       icon: Phone,
       label: "Phone",
-      value: "+92 310 1048485",
+      value: "+92-310-1048485",
       href: "tel:+923101048485",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Faisalabad, Pakistan",
-      href: "#",
     },
   ]
 
@@ -76,18 +99,18 @@ export function ContactSection() {
       icon: Github,
       label: "GitHub",
       href: "https://github.com/iaffansheikh21",
-      color: "hover:text-gray-900",
+      color: "hover:text-blue-600",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/affansheikh21",
+      href: "https://www.linkedin.com/in/iaffansheikh21/",
       color: "hover:text-blue-600",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://instagram.com/affansheikh21",
+      href: "https://instagram.com/iaffansheikh21",
       color: "hover:text-blue-400",
     },
   ]
