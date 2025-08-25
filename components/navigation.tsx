@@ -154,7 +154,7 @@ export function Navigation() {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
               const sectionId = item.href.substring(1)
               const isActive = activeSection === sectionId
@@ -172,7 +172,34 @@ export function Navigation() {
               )
             })}
             <ThemeToggle />
+          </div> */}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => {
+              const sectionId = item.href.substring(1)
+              const isActive = activeSection === sectionId
+
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNavClick(item.href)
+                  }}
+                  className={`relative font-medium transition-colors duration-200 ${isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                    }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />
+                  )}
+                </a>
+              )
+            })}
+            <ThemeToggle />
           </div>
+
 
           {/* Mobile Menu Controls */}
           <div className="md:hidden flex items-center space-x-2">
@@ -196,8 +223,8 @@ export function Navigation() {
                     key={item.href}
                     onClick={() => handleNavClick(item.href)}
                     className={`block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${isActive
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-primary hover:bg-muted"
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-primary hover:bg-muted"
                       }`}
                   >
                     {item.label}

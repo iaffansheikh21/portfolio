@@ -1,8 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Mail, Heart, ArrowUp, Instagram } from "lucide-react"
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 
 export function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -34,6 +35,11 @@ export function Footer() {
       icon: Mail,
       href: "mailto:muhammadaffansheikh21@gmail.com",
       label: "Email",
+    },
+    {
+      icon: Instagram,
+      href: "https://instagram.com/iaffansheikh21",
+      label: "Instagram",
     },
   ]
 
@@ -67,21 +73,27 @@ export function Footer() {
               Full-stack developer passionate about creating exceptional digital experiences with modern web
               technologies.
             </p>
-            <div className="flex space-x-3">
-              {socialLinks.map((social) => (
-                <Button
-                  key={social.label}
-                  variant="ghost"
-                  size="sm"
-                  className="p-2 hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-                  asChild
+            <motion.div className="flex space-x-3 sm:space-x-4">
+              {socialLinks.map((social, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
                 >
-                  <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="p-2 hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                    asChild
+                  >
+                    <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+                      <social.icon className="h-5 w-5" />
+                    </a>
+                  </Button>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
+
           </div>
 
           {/* Quick Links */}
@@ -119,11 +131,11 @@ export function Footer() {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <span>© 2025 Muhammad Affan Sheikh. Made with</span>
+              <span>© 2025 Muhammad Affan Sheikh. Crafted with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
               <span>and lots of ☕</span>
             </div>
-            <div className="text-sm text-muted-foreground">Built with Next.js & Tailwind CSS</div>
+            <div className="text-sm text-muted-foreground">Built with Next.js ⚡ & Tailwind CSS 🎨.</div>
           </div>
         </div>
       </div>

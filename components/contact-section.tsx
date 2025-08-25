@@ -580,7 +580,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle, AlertCircle } from "lucide-react"
+import { motion } from "framer-motion"
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, CheckCircle, AlertCircle } from "lucide-react"
 
 interface ContactForm {
   name: string
@@ -657,7 +658,6 @@ export function ContactSection() {
       icon: MapPin,
       label: "Location",
       value: "Faisalabad, Pakistan",
-      href: "#",
     },
   ]
 
@@ -666,7 +666,7 @@ export function ContactSection() {
       icon: Github,
       label: "GitHub",
       href: "https://github.com/iaffansheikh21",
-      color: "hover:text-foreground",
+      color: "hover:text-blue-600",
     },
     {
       icon: Linkedin,
@@ -675,12 +675,13 @@ export function ContactSection() {
       color: "hover:text-blue-600",
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/iaffansheikh21",
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://instagram.com/iaffansheikh21",
       color: "hover:text-blue-400",
     },
   ]
+
 
   return (
     <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
@@ -726,22 +727,35 @@ export function ContactSection() {
             </div>
 
             {/* Social Links */}
+            
             <div>
               <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Follow Me</h4>
-              <div className="flex space-x-3 sm:space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2.5 sm:p-3 rounded-lg bg-card hover:bg-muted transition-all duration-200 ${social.color}`}
+              <motion.div className="flex space-x-3 sm:space-x-4">
+                {[
+                  { icon: Github, href: "https://github.com/iaffansheikh21" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/iaffansheikh21/" },
+                  { icon: Instagram, href: "https://instagram.com/iaffansheikh21" },
+                ].map(({ icon: Icon, href }, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </a>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                      asChild
+                    >
+                      <a href={href} target="_blank" rel="noopener noreferrer">
+                        <Icon className="h-5 w-5" />
+                      </a>
+                    </Button>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
+
 
             {/* Availability Status */}
             <Card>

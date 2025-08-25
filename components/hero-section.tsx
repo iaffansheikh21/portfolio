@@ -489,7 +489,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Download, Github, Instagram, Linkedin, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function HeroSection() {
@@ -507,7 +507,7 @@ export function HeroSection() {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a")
-    link.href = "/Affan-resume.pdf" // same file as in old version
+    link.href = "/Affan-resume.pdf" 
     link.download = "Muhammad-Affan-Sheikh-CV.pdf"
     document.body.appendChild(link)
     link.click()
@@ -622,6 +622,7 @@ export function HeroSection() {
                 { icon: Github, href: "https://github.com/iaffansheikh21" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/iaffansheikh21/" },
                 { icon: Mail, href: "mailto:muhammadaffansheikh21@gmail.com" },
+                { icon: Instagram, href: "https://instagram.com/iaffansheikh21"},
               ].map(({ icon: Icon, href }, index) => (
                 <motion.div key={index} whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.9 }}>
                   <Button
