@@ -22,7 +22,11 @@ export const metadata: Metadata = {
   title: "Muhammad Affan Sheikh - Full Stack Developer",
   description:
     "Modern portfolio showcasing full-stack development expertise in React, Next.js, and cutting-edge web technologies.",
-  generator: "v0.app",
+    icons: {
+      icon: "/favicon/favicon.ico",
+      shortcut: "/favicon/favicon-32x32.png",
+      apple: "/favicon/favicon-180x180.png",
+    },
 }
 
 export default function RootLayout({

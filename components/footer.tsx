@@ -135,12 +135,12 @@ export function Footer() {
               <Heart className="w-4 h-4 text-red-500 fill-current" />
               <span>and lots of ☕</span>
             </div>
-            <div className="text-sm text-muted-foreground">Built with Next.js ⚡ & Tailwind CSS 🎨.</div>
+            {/* <div className="text-sm text-muted-foreground">Built with Next.js ⚡ & Tailwind CSS 🎨.</div> */}
           </div>
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top Button */} 
       {showScrollTop && (
         <Button
           onClick={scrollToTop}
