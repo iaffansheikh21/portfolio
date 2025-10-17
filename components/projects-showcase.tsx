@@ -31,6 +31,17 @@ const projects: Project[] = [
     githubUrl: "https://github.com/iaffansheikh21/meetscribe",
   },
   {
+    id: "nutrisnap-ai",
+    title: "NutriSnap AI",
+    description: "AI-powered food nutrition analyzer",
+    longDescription:
+      "NutriSnap AI is a smart nutrition analysis web app that uses AI to detect and calculate macronutrients from any meal photo. Users can upload or capture food images, and the system instantly provides a detailed breakdown of calories, protein, carbs, and fat with AI confidence accuracy. Built with seamless n8n integration for real-time AI workflows and deployed on Vercel for fast, reliable performance.",
+    image: "/nutrisnap.png",
+    technologies: ["Next.js", "Tailwind CSS", "n8n", "Vercel"],
+    liveUrl: "https://nutri-snaps-ai.vercel.app/",
+    githubUrl: "https://github.com/iaffansheikh21/NutriSnapAI",
+  },
+  {
     id: "listco",
     title: "ListCo",
     description: "A business directory that helps users easily find and connect with services.",
@@ -72,16 +83,6 @@ const projects: Project[] = [
     image: "/blogsite.png",
     technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
     githubUrl: "https://github.com/iaffansheikh21/TodoApp-FastAPI-",
-  },
-  {
-    id: "blog-website",
-    title: "Blog Website",
-    description: "Modern blogging platform with CMS",
-    longDescription:
-      "A feature-rich blogging platform with markdown support, comment system, and admin dashboard. Includes SEO optimization and social media integration.",
-    image: "/blogsite.png",
-    technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/iaffansheikh21/blog-website",
   },
 ]
 
@@ -178,7 +179,7 @@ export function ProjectsShowcase() {
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   />
-                  <motion.div
+                  {/* <motion.div
                     className="absolute bottom-4 left-4 right-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileHover={{ opacity: 1, y: 0 }}
@@ -198,7 +199,39 @@ export function ProjectsShowcase() {
                         </Button>
                       )}
                     </div>
+                  </motion.div> */}
+                  <motion.div
+                    className="absolute bottom-4 left-4 right-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  >
+                    <div className="flex gap-2">
+                      {project.liveUrl && (
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          className="bg-white text-black dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                          onClick={() => window.open(project.liveUrl, "_blank")}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-1" />
+                          Live Demo
+                        </Button>
+                      )}
+                      {project.githubUrl && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-gray-400 text-gray-800 dark:border-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                          onClick={() => window.open(project.githubUrl, "_blank")}
+                        >
+                          <Github className="w-4 h-4 mr-1" />
+                          Code
+                        </Button>
+                      )}
+                    </div>
                   </motion.div>
+
                 </div>
                 <CardHeader>
                   <CardTitle className="font-serif">{project.title}</CardTitle>

@@ -70,7 +70,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-serif font-bold text-2xl text-foreground">Muhammad Affan Sheikh</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Full-stack developer passionate about creating exceptional digital experiences with modern web
+              Full-Stack developer passionate about creating exceptional digital experiences with modern web
               technologies.
             </p>
             <motion.div className="flex space-x-3 sm:space-x-4">
