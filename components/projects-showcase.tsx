@@ -179,27 +179,6 @@ export function ProjectsShowcase() {
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   />
-                  {/* <motion.div
-                    className="absolute bottom-4 left-4 right-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  >
-                    <div className="flex gap-2">
-                      {project.liveUrl && (
-                        <Button size="sm" variant="secondary" onClick={() => window.open(project.liveUrl, "_blank")}>
-                          <ExternalLink className="w-4 h-4 mr-1" />
-                          Live Demo
-                        </Button>
-                      )}
-                      {project.githubUrl && (
-                        <Button size="sm" variant="outline" onClick={() => window.open(project.githubUrl, "_blank")}>
-                          <Github className="w-4 h-4 mr-1" />
-                          Code
-                        </Button>
-                      )}
-                    </div>
-                  </motion.div> */}
                   <motion.div
                     className="absolute bottom-4 left-4 right-4"
                     initial={{ opacity: 0, y: 20 }}
