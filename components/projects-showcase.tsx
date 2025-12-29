@@ -31,6 +31,17 @@ const projects: Project[] = [
     githubUrl: "https://github.com/iaffansheikh21/meetscribe",
   },
   {
+  id: "notiq",
+  title: "Notiq",
+  description: "Modern AI-powered note-taking application with rich text editing",
+  longDescription:
+    "Notiq is a modern, AI-powered note-taking application that helps users create, organize, and share notes efficiently. Features include rich text editing with TipTap, AI assistant for summaries and writing improvements, public note sharing, real-time auto-save, tags & categories, search & filter, trash & restore, and dark/light theme support.",
+  image: "/notiq.png",
+  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "OpenAI", "TipTap", "NextAuth.js", "Zustand"],
+  liveUrl: "https://notiq-ai.vercel.app",
+  githubUrl: "https://github.com/iaffansheikh21/Notiq",
+},
+  {
     id: "nutrisnap-ai",
     title: "NutriSnap AI",
     description: "AI-powered food nutrition analyzer",
@@ -74,16 +85,16 @@ const projects: Project[] = [
     liveUrl: "https://newswave-sigma.vercel.app/",
     githubUrl: "https://github.com/iaffansheikh21/newswave",
   },
-  {
-    id: "todoApp",
-    title: "Todo App",
-    description: "Modern blogging platform with CMS",
-    longDescription:
-      "A full-stack Todo app with a Next.js frontend (TypeScript, Tailwind CSS) and a FastAPI backend (SQLModel, Supabase). Supports CRUD operations and is optimized for both desktop and mobile.",
-    image: "/blogsite.png",
-    technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/iaffansheikh21/TodoApp-FastAPI-",
-  },
+  // {
+  //   id: "todoApp",
+  //   title: "Todo App",
+  //   description: "Modern blogging platform with CMS",
+  //   longDescription:
+  //     "A full-stack Todo app with a Next.js frontend (TypeScript, Tailwind CSS) and a FastAPI backend (SQLModel, Supabase). Supports CRUD operations and is optimized for both desktop and mobile.",
+  //   image: "/blogsite.png",
+  //   technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
+  //   githubUrl: "https://github.com/iaffansheikh21/TodoApp-FastAPI-",
+  // },
 ]
 
 export function ProjectsShowcase() {
