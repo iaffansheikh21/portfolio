@@ -1,21 +1,27 @@
 // "use client"
 
-import { useState, useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
 
 interface Project {
-  id: string
-  title: string
-  description: string
-  longDescription: string
-  image: string
-  technologies: string[]
-  liveUrl?: string
-  githubUrl?: string
+  id: string;
+  title: string;
+  description: string;
+  longDescription: string;
+  image: string;
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 const projects: Project[] = [
@@ -26,21 +32,52 @@ const projects: Project[] = [
     longDescription:
       "MeetScribe is an AI-powered web application that records, transcribes, and documents meetings in real-time. It uses speech-to-text and LLMs to identify speakers, generate structured meeting minutes, and extract key insights streamlining productivity for teams and professionals.",
     image: "/MeetScribe.png",
-    technologies: ["Next.js", "TypeScript", "OpenAI", "MongoDB", "Pinecone", "Gemini API", "Cloudinary", "Assembly AI", "Framer-motion"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "OpenAI",
+      "MongoDB",
+      "Pinecone",
+      "Gemini API",
+      "Cloudinary",
+      "Assembly AI",
+      "Framer-motion",
+    ],
     liveUrl: "https://meetscribe0.vercel.app/",
     githubUrl: "https://github.com/iaffansheikh21/meetscribe",
   },
   {
-  id: "notiq",
-  title: "Notiq",
-  description: "Modern AI-powered note-taking application with rich text editing",
-  longDescription:
-    "Notiq is a modern, AI-powered note-taking application that helps users create, organize, and share notes efficiently. Features include rich text editing with TipTap, AI assistant for summaries and writing improvements, public note sharing, real-time auto-save, tags & categories, search & filter, trash & restore, and dark/light theme support.",
-  image: "/notiq.png",
-  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "OpenAI", "TipTap", "NextAuth.js", "Zustand"],
-  liveUrl: "https://notiq-ai.vercel.app",
-  githubUrl: "https://github.com/iaffansheikh21/Notiq",
-},
+    id: "notiq",
+    title: "Notiq",
+    description:
+      "Modern AI-powered note-taking application with rich text editing",
+    longDescription:
+      "Notiq is a modern, AI-powered note-taking application that helps users create, organize, and share notes efficiently. Features include rich text editing with TipTap, AI assistant for summaries and writing improvements, public note sharing, real-time auto-save, tags & categories, search & filter, trash & restore, and dark/light theme support.",
+    image: "/notiq.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "MongoDB",
+      "OpenAI",
+      "TipTap",
+      "NextAuth.js",
+      "Zustand",
+    ],
+    liveUrl: "https://notiq-ai.vercel.app",
+    githubUrl: "https://github.com/iaffansheikh21/Notiq",
+  },
+  {
+    id: "todoflow-pwa",
+    title: "TodoFlow",
+    description: "Offline-first smart todo Progressive Web App",
+    longDescription:
+      "TodoFlow is a full-stack Progressive Web App (PWA) built with Next.js 14, MongoDB, and Node.js. Features offline-first architecture with automatic sync, JWT authentication, and modern responsive UI. Users can create, edit, and manage todos with priority levels and due dates, even without internet connection. All changes sync automatically when online. Includes real-time search, filtering, dashboard statistics, and installable as a native app on any device.",
+    image: "/todoflow.png",
+    technologies: ["Next.js 14", "MongoDB", "JWT", "PWA", "Tailwind CSS"],
+    liveUrl: "https://my-todoflow.vercel.app/",
+    githubUrl: "https://github.com/iaffansheikh21/DailyFlow",
+  },
   {
     id: "nutrisnap-ai",
     title: "NutriSnap AI",
@@ -55,22 +92,36 @@ const projects: Project[] = [
   {
     id: "listco",
     title: "ListCo",
-    description: "A business directory that helps users easily find and connect with services.",
+    description:
+      "A business directory that helps users easily find and connect with services.",
     longDescription:
       "ListCo is a comprehensive business directory platform that allows users to discover local businesses, read reviews, and connect with service providers. It features advanced search capabilities, user-friendly navigation, and a responsive design for seamless access across devices.",
     image: "/BD(MAS).png",
-    technologies: ["Next.Js", "TypeScript", "Tailwind CSS", "Context API", "Framer-motion"],
+    technologies: [
+      "Next.Js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Context API",
+      "Framer-motion",
+    ],
     liveUrl: "https://list-co.vercel.app/",
     githubUrl: "https://github.com/iaffansheikh21/listco",
   },
   {
     id: "business-directory",
     title: "Business Directory",
-    description: "This platform provides an intuitive, scalable solution for efficient business search and discovery.",
+    description:
+      "This platform provides an intuitive, scalable solution for efficient business search and discovery.",
     longDescription:
       "A comprehensive business directory that allows users to search for local businesses, read reviews, and find contact information. Features include advanced search filters, user ratings, and a responsive design for mobile access.",
     image: "/business_directory.png",
-    technologies: ["Next.js", "TypeScript", "Context API", "Tailwind CSS", "Google Map API"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Context API",
+      "Tailwind CSS",
+      "Google Map API",
+    ],
     liveUrl: "https://thecarrygo.vercel.app/",
     githubUrl: "https://github.com/iaffansheikh21/CarryGo",
   },
@@ -85,22 +136,12 @@ const projects: Project[] = [
     liveUrl: "https://newswave-sigma.vercel.app/",
     githubUrl: "https://github.com/iaffansheikh21/newswave",
   },
-  // {
-  //   id: "todoApp",
-  //   title: "Todo App",
-  //   description: "Modern blogging platform with CMS",
-  //   longDescription:
-  //     "A full-stack Todo app with a Next.js frontend (TypeScript, Tailwind CSS) and a FastAPI backend (SQLModel, Supabase). Supports CRUD operations and is optimized for both desktop and mobile.",
-  //   image: "/blogsite.png",
-  //   technologies: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
-  //   githubUrl: "https://github.com/iaffansheikh21/TodoApp-FastAPI-",
-  // },
-]
+];
 
 export function ProjectsShowcase() {
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -111,7 +152,7 @@ export function ProjectsShowcase() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 60, scale: 0.8 },
@@ -121,12 +162,16 @@ export function ProjectsShowcase() {
       scale: 1,
       transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
     },
-  }
+  };
 
   const headerVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94] } },
-  }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
+  };
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8" ref={ref}>
@@ -143,7 +188,11 @@ export function ProjectsShowcase() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{
+              duration: 1,
+              delay: 0.1,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
           >
             My <span className="text-primary">Projects</span>
           </motion.h2>
@@ -152,9 +201,14 @@ export function ProjectsShowcase() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{
+              duration: 1,
+              delay: 0.3,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
           >
-            A showcase of my work, featuring modern web applications built with cutting-edge technologies
+            A showcase of my work, featuring modern web applications built with
+            cutting-edge technologies
           </motion.p>
         </motion.div>
 
@@ -169,7 +223,11 @@ export function ProjectsShowcase() {
             <motion.div
               key={project.id}
               variants={cardVariants}
-              whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] } }}
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+              }}
             >
               <Card
                 className="group cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 border-0 bg-card/50 backdrop-blur-sm"
@@ -182,7 +240,10 @@ export function ProjectsShowcase() {
                     alt={project.title}
                     className="w-full h-48 md:h-64 object-cover"
                     whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    }}
                   />
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
@@ -213,7 +274,9 @@ export function ProjectsShowcase() {
                           size="sm"
                           variant="outline"
                           className="border-gray-400 text-gray-800 dark:border-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                          onClick={() => window.open(project.githubUrl, "_blank")}
+                          onClick={() =>
+                            window.open(project.githubUrl, "_blank")
+                          }
                         >
                           <Github className="w-4 h-4 mr-1" />
                           Code
@@ -221,13 +284,17 @@ export function ProjectsShowcase() {
                       )}
                     </div>
                   </motion.div>
-
                 </div>
                 <CardHeader>
                   <CardTitle className="font-serif">{project.title}</CardTitle>
-                  <motion.div animate={{ opacity: 1, height: "auto" }} transition={{ duration: 0.3 }}>
+                  <motion.div
+                    animate={{ opacity: 1, height: "auto" }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <CardDescription>
-                      {hoveredProject === project.id ? project.longDescription : project.description}
+                      {hoveredProject === project.id
+                        ? project.longDescription
+                        : project.description}
                     </CardDescription>
                   </motion.div>
                 </CardHeader>
@@ -238,7 +305,11 @@ export function ProjectsShowcase() {
                         key={tech}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: techIndex * 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        transition={{
+                          duration: 0.3,
+                          delay: techIndex * 0.05,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
                         whileHover={{ scale: 1.1 }}
                       >
                         <Badge variant="outline" className="text-xs">
@@ -254,5 +325,5 @@ export function ProjectsShowcase() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

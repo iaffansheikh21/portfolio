@@ -131,7 +131,7 @@ export function Footer() {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <span>© 2025 Muhammad Affan Sheikh. Crafted with</span>
+              <span>© {new Date().getFullYear()} Muhammad Affan Sheikh. Crafted with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
               <span>and lots of ☕</span>
             </div>
