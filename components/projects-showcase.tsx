@@ -47,6 +47,29 @@ const projects: Project[] = [
     githubUrl: "https://github.com/iaffansheikh21/meetscribe",
   },
   {
+    id: "ClientFlow",
+    title: "ClientFlow AI",
+    description: "AI-powered client communication and support automation platform",
+    longDescription:
+      "ClientFlow AI is a full-stack AI agent that autonomously manages  client communication across WhatsApp and Slack. It handles incoming queries with GPT-4o, maintains conversation memory, and automatically creates Trello tasks, sends escalation alerts, and notifies clients on task progress — all without human intervention. Built with FastAPI, Next.js, and PostgreSQL, it features a real-time admin dashboard for monitoring conversations, managing clients, updating agent behavior live, and testing the agent safely with a dry-run mode.",
+    image: "/ClientFlow.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "OpenAI",
+      "PossgreSQL",
+      "FastAPI",
+      "SQLAlchemy",
+      "Twilio WhatsApp API",
+      "Slack API",
+      "Trello API",
+      "Docker",
+      "ngrok",
+    ],
+    liveUrl: "https://github.com/iaffansheikh21/Client_Agent",
+    githubUrl: "https://github.com/iaffansheikh21/Client_Agent",
+  },
+  {
     id: "notiq",
     title: "Notiq",
     description:
